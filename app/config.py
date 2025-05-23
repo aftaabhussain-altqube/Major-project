@@ -31,6 +31,8 @@ class Settings(BaseSettings):
 
     class subservices:  # noqa
         pass
+    class ScannerSettings:
+        base_url: str = os.getenv("SCANNER_BASE_URL")
 
 
 @lru_cache()

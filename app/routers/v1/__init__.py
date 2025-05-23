@@ -6,11 +6,15 @@ from models import *
 
 from .example import router as example_router
 
+from .scanner import router as scanner_router
+
 settings = get_settings()
 engine = get_engine(settings.name)
 
 router = APIRouter()
 router.include_router(example_router)
+
+router.include_router(scanner_router)
 
 
 @router.get("/health-check", response_model=HealthCheckResponse)

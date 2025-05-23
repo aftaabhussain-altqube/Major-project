@@ -1,0 +1,16 @@
+description: Ultralytics wound model_openvino_model trained on /teamspace/studios/this_studio/Cattle-Splits-12/data.yaml
+author: Ultralytics
+date: '2024-08-06T13:49:15.291116'
+version: 8.2.73
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 1280
+- 1280
+names:
+  0: Wound-Dry
+  1: Wound-No
+  2: Wound-Ulcerated

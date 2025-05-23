@@ -1,0 +1,30 @@
+description: Ultralytics bcs model_openvino_model trained on /teamspace/studios/this_studio/BCS-YOLO-v2-1/data.yaml
+author: Ultralytics
+date: '2024-08-06T12:27:09.662492'
+version: 8.2.73
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 2048
+- 2048
+names:
+  0: BCS-1
+  1: BCS-1.25
+  2: BCS-1.5
+  3: BCS-1.75
+  4: BCS-2
+  5: BCS-2.25
+  6: BCS-2.5
+  7: BCS-2.75
+  8: BCS-3
+  9: BCS-3.25
+  10: BCS-3.5
+  11: BCS-3.75
+  12: BCS-4
+  13: BCS-4.25
+  14: BCS-4.5
+  15: BCS-4.75
+  16: BCS-5

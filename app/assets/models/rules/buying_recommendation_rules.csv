@@ -1,0 +1,29 @@
+Label,Buying Recommendations
+Skin-Coat-Rough,No
+Skin-Coat-Moderately-Rough,Physical Check required
+Skin-Coat-Shiny,Yes
+Worm-Load-Pot-Belly-Present,No
+Worm-Load-Moderate,Physical Check required
+Worm-Load-No,Yes
+Udder-Small-Tight,Physical Check required
+Udder-Compact,Yes
+Udder-Moderately-Pendulous,Yes
+Udder-Pendulous,Physical Check required
+Udder-Balloon-Shaped,No
+BCS-1,No
+BCS-1.25,No
+BCS-1.5,No
+BCS-1.75,Physical Check required
+BCS-2,Physical Check required
+BCS-2.25,Physical Check required
+BCS-2.5,Yes
+BCS-2.75,Yes
+BCS-3,Yes
+BCS-3.25,Yes
+BCS-3.5,Yes
+BCS-3.75,Physical Check required
+BCS-4,Physical Check required
+BCS-4.25,Physical Check required
+BCS-4.5,Physical Check required
+BCS-4.75,Physical Check required
+BCS-5,Physical Check required

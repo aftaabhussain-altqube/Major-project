@@ -1,0 +1,16 @@
+description: Ultralytics coat model_openvino_model trained on /teamspace/studios/this_studio/Cattle-Splits-9/data.yaml
+author: Ultralytics
+date: '2024-08-06T12:47:15.968356'
+version: 8.2.73
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 1280
+- 1280
+names:
+  0: Skin-Coat-Moderately-Rough
+  1: Skin-Coat-Rough
+  2: Skin-Coat-Shiny
