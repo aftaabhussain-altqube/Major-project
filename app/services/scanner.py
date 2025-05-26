@@ -12,9 +12,6 @@ logger = logging.getLogger(__name__)
 
 
 class ScannerService:
-    """
-    Client wrapper around the Silofortune AI-Scanner micro-service.
-    """
     # Auth & base-path pulled from your settings the same way as other sub-services
     HEADERS: Dict[str, str] = {
         # "X-API-KEY": settings.subservices.scanner.api_key,   # ⇦ adjust key name if different
@@ -29,16 +26,7 @@ class ScannerService:
             language: str = "en",  # matches the Postman “language” field
             timeout: float = 30.0,
     ) -> Any:
-        """
-        Hit `/udder-pred` with the cow side image and return the JSON payload
-        containing `interpretation`, `recommendation`, and `value`.
 
-        Raises
-        ------
-        HTTPException
-            502 if the downstream service is unreachable,
-            or propagates the status code returned by the scanner.
-        """
         uri = "/udder-pred"
         url = f"{cls.BASE_URL}{uri}"
 
@@ -74,24 +62,14 @@ class ScannerService:
     @classmethod
     async def get_bcs(
             cls,
-            image: UploadFile,  # FastAPI UploadFile (or anything with .filename/.read())
-            language: str = "en",  # matches the Postman “language” field
+            image: UploadFile,
+            language: str = "en",
             timeout: float = 30.0,
     ) -> Any:
-        """
-        Hit `/udder-pred` with the cow side image and return the JSON payload
-        containing `interpretation`, `recommendation`, and `value`.
 
-        Raises
-        ------
-        HTTPException
-            502 if the downstream service is unreachable,
-            or propagates the status code returned by the scanner.
-        """
         uri = "/bcs-score"
         url = f"{cls.BASE_URL}{uri}"
 
-        # Build multipart/form-data exactly like the Postman call
         files = {
             "side-img": (image.filename, await image.read(), image.content_type or "image/jpeg"),
         }
@@ -127,16 +105,7 @@ class ScannerService:
             language: str = "en",
             timeout: float = 30.0,
     ) -> Any:
-        """
-        Hit `/udder-pred` with the cow side image and return the JSON payload
-        containing `interpretation`, `recommendation`, and `value`.
 
-        Raises
-        ------
-        HTTPException
-            502 if the downstream service is unreachable,
-            or propagates the status code returned by the scanner.
-        """
         uri = "/breed-pred"
         url = f"{cls.BASE_URL}{uri}"
 
@@ -177,16 +146,7 @@ class ScannerService:
             language: str = "en",
             timeout: float = 30.0,
     ) -> Any:
-        """
-        Hit `/udder-pred` with the cow side image and return the JSON payload
-        containing `interpretation`, `recommendation`, and `value`.
 
-        Raises
-        ------
-        HTTPException
-            502 if the downstream service is unreachable,
-            or propagates the status code returned by the scanner.
-        """
         uri = "/breed-grade"
         url = f"{cls.BASE_URL}{uri}"
 
@@ -232,24 +192,7 @@ class ScannerService:
             language: str = "en",
             timeout: float = 30.0,
     ) -> Any:
-        """
-        Call `/animal-economic-status` and return the JSON payload.
 
-        Parameters
-        ----------
-        breed, breed_grade, bcs_score, udder_pred, skin_pred, worm_load
-            Inputs required by the Scanner micro-service.
-        language
-            Optional locale for downstream text generation.
-        timeout
-            HTTP timeout (seconds).
-
-        Raises
-        ------
-        HTTPException
-            • 502 if the scanner is unreachable
-            • or propagates the status code returned by the scanner.
-        """
         url = f"{cls.BASE_URL}/animal-economic-status"
 
         # Build multipart/form-data payload exactly like Postman
